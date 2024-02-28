@@ -54,7 +54,7 @@ jobs:
 
         # git clean -fdX
         # git status
-        # git add .
+        git add .
         # git commit -m "clean tree"
         # git push origin main  # Pushes changes to the main branch
       env:
