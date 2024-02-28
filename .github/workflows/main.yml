@@ -41,7 +41,24 @@ jobs:
         # cd jar-folder
         curl -L -o migrator.jar "https://github.com/spring-projects-experimental/spring-boot-migrator/releases/download/0.15.0/spring-boot-migrator.jar"
         pwd | ls -a
-       
+    - name: Configure Git identity
+      run: |
+        git config --global user.email "winadm1n@protonmail.com"
+        git config --global user.name "winadm1n"
+        git status
+        # git rm --cached migrator.jar && 
+        echo "migrator.jar" >> .gitignore
+        git status
+        # git add . :! migrator.jar
+        # git commit -m "Ignore migrator.jar"
+
+        # git clean -fdX
+        # git status
+        git add .
+        # git commit -m "clean tree"
+        # git push origin main  # Pushes changes to the main branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_TOKEN }}
  
     - name: Migrate Mule to Spring Boot    
       run: |
@@ -62,10 +79,7 @@ jobs:
       run: mvn spring-boot:run -e
 
 
-    - name: Configure Git identity
-      run: |
-        git config --global user.email "winadm1n@protonmail.com"
-        git config --global user.name "winadm1n"
+
     - name: Check if folder exists and move files
       run: |
         if [ ! -d "migrated-folder" ]; then
