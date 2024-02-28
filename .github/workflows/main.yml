@@ -35,28 +35,28 @@ jobs:
         distribution: 'adopt'
         java-version: '17' # or any other version you need
 
-    - name: download jar
-      run: |   
-        # mkdir jar-folder
-        # cd jar-folder
-        curl -L -o migrator.jar "https://github.com/spring-projects-experimental/spring-boot-migrator/releases/download/0.15.0/spring-boot-migrator.jar"
-        pwd | ls -a
+    # - name: download jar
+    #   run: |   
+    #     # mkdir jar-folder
+    #     # cd jar-folder
+    #     curl -L -o migrator.jar "https://github.com/spring-projects-experimental/spring-boot-migrator/releases/download/0.15.0/spring-boot-migrator.jar"
+    #     pwd | ls -a
     - name: Configure Git identity
       run: |
         git config --global user.email "winadm1n@protonmail.com"
         git config --global user.name "winadm1n"
-        git status
-        # git rm --cached migrator.jar && 
-        echo "migrator.jar" >> .gitignore
-        git status
-        # git add . :! migrator.jar
-        # git commit -m "Ignore migrator.jar"
-
-        # git clean -fdX
         # git status
-        git add .
-        # git commit -m "clean tree"
-        # git push origin main  # Pushes changes to the main branch
+        # # git rm --cached migrator.jar && 
+        # echo "migrator.jar" >> .gitignore
+        # git status
+        # # git add . :! migrator.jar
+        # # git commit -m "Ignore migrator.jar"
+
+        # # git clean -fdX
+        # # git status
+        # git add .
+        # # git commit -m "clean tree"
+        # # git push origin main  # Pushes changes to the main branch
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_TOKEN }}
  
@@ -64,7 +64,7 @@ jobs:
       run: |
         # cd jar-folder
         pwd | ls -a
-        git ls-tree --full-tree -r HEAD
+        # git ls-tree --full-tree -r HEAD
         sudo apt install maven -y
         chmod +x migrator.jar
         touch recipes.txt
