@@ -70,7 +70,7 @@ jobs:
         touch recipes.txt
         echo 'scan "hellomule"'>> recipes.txt
         echo "apply 1" >> recipes.txt
-        echo "apply 2" >> recipes.txt
+        echo "apply 1" >> recipes.txt
        
         java -jar "-Dsbm.gitSupportEnabled=false" migrator.jar @recipes.txt
         # java -jar migrator.jar # Step 1
