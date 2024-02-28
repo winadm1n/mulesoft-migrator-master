@@ -27,4 +27,4 @@ jobs:
       run: | 
         sudo apt install maven -y
         cd ./migrated-folder
-        mvn compile
+        mvn compile -e -q
