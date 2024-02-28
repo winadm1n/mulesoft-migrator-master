@@ -80,10 +80,11 @@ jobs:
         if [ ! -d "migrated-folder" ]; then
           mkdir migrated-folder
           mv hellomule/* migrated-folder/  # Moves files from specific-folder to new-folder
+          ls
           cd ./migrated-folder
           git add .
-          git commit -m "Move files to new folder"
-          git push origin main  # Pushes changes to the main branch
+          git commit -m "Move files to the new folder"
+          git push origin master  # Pushes changes to the main branch
         else
           echo " migrated-folder already exists, skipping move operation"
         fi
