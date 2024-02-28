@@ -74,11 +74,11 @@ jobs:
        
         java -jar "-Dsbm.gitSupportEnabled=false" migrator.jar @recipes.txt
         # java -jar migrator.jar # Step 1
- 
+
     - name: Run Spring Boot Application
-      run: mvn spring-boot:run -e
-
-
+      run: | 
+        cd ./migrated-folder
+        mvn compile
 
     - name: Check if folder exists and move files
       run: |
@@ -94,3 +94,10 @@ jobs:
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_TOKEN }}
+ 
+    # - name: Run Spring Boot Application
+    #   run: mvn spring-boot:run -e
+
+
+
+
