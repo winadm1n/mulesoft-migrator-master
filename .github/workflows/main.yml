@@ -66,7 +66,7 @@ jobs:
         pwd | ls -a
         # git ls-tree --full-tree -r HEAD
         sudo apt install maven -y
-        chmod +x migrator.jar
+        # chmod +x migrator.jar
         touch recipes.txt
         echo 'scan "hellomule"'>> recipes.txt
         echo "apply 1" >> recipes.txt
