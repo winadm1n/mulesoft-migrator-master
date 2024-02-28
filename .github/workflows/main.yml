@@ -45,9 +45,9 @@ jobs:
       run: |
         git config --global user.email "winadm1n@protonmail.com"
         git config --global user.name "winadm1n"
-        git add .
-        git commit -m "Move files to new folder"
-        git push origin main  # Pushes changes to the main branch
+        # git add .
+        # git commit -m "Move files to new folder"
+        # git push origin main  # Pushes changes to the main branch
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_TOKEN }}
  
