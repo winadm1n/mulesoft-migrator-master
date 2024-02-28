@@ -99,7 +99,7 @@ jobs:
     - name: compile Spring Boot Application -e
       run: | 
         cd ./migrated-folder
-        mvn compile -e
+        mvn compile -e -q
 
 
  
