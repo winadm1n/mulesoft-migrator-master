@@ -77,7 +77,7 @@ jobs:
 
     - name: Run Spring Boot Application
       run: | 
-        cd ./migrated-folder
+        cd hellomule/
         mvn compile
 
     - name: Check if folder exists and move files
