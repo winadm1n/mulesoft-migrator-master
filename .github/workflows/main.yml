@@ -49,7 +49,7 @@ jobs:
         # git rm --cached migrator.jar && 
         echo "migrator.jar" >> .gitignore
         git status
-        git add . :! migrator.jar
+        # git add . :! migrator.jar
         # git commit -m "Ignore migrator.jar"
 
         # git clean -fdX
