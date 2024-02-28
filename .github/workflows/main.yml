@@ -91,10 +91,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_PAT_TOKEN }}
 
-    - name: compile Spring Boot Application -q
-      run: | 
-        cd ./migrated-folder
-        mvn compile -q
+    # - name: compile Spring Boot Application -q
+    #   run: | 
+    #     cd ./migrated-folder
+    #     mvn compile -q
 
     - name: compile Spring Boot Application -e
       run: | 
