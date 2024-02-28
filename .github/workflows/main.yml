@@ -46,8 +46,10 @@ jobs:
         git config --global user.email "winadm1n@protonmail.com"
         git config --global user.name "winadm1n"
         git status
-        git rm --cached migrator.jar && echo "migrator.jar" >> .gitignore
+        # git rm --cached migrator.jar && 
+        echo "migrator.jar" >> .gitignore
         git status
+        git add . :! migrator.jar
         # git commit -m "Ignore migrator.jar"
 
         # git clean -fdX
