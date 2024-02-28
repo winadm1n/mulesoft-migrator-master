@@ -35,12 +35,12 @@ jobs:
         distribution: 'adopt'
         java-version: '17' # or any other version you need
 
-    # - name: download jar
-    #   run: |   
-    #     # mkdir jar-folder
-    #     # cd jar-folder
-    #     curl -L -o migrator.jar "https://github.com/spring-projects-experimental/spring-boot-migrator/releases/download/0.15.0/spring-boot-migrator.jar"
-    #     pwd | ls -a
+    - name: download jar
+      run: |   
+        # mkdir jar-folder
+        # cd jar-folder
+        curl -L -o migrator.jar "https://github.com/spring-projects-experimental/spring-boot-migrator/releases/download/0.15.0/spring-boot-migrator.jar"
+        pwd | ls -a
     - name: Configure Git identity
       run: |
         git config --global user.email "winadm1n@protonmail.com"
@@ -72,7 +72,7 @@ jobs:
         echo "apply 1" >> recipes.txt
         echo "apply 2" >> recipes.txt
        
-        java -jar migrator.jar @recipes.txt
+        java -jar "-Dsbm.gitSupportEnabled=false" migrator.jar @recipes.txt
         # java -jar migrator.jar # Step 1
  
     - name: Run Spring Boot Application
