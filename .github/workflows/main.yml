@@ -48,7 +48,7 @@ jobs:
         git status
         git rm --cached migrator.jar && echo "migrator.jar" >> .gitignore
         git status
-        git commit -m "Ignore migrator.jar"
+        # git commit -m "Ignore migrator.jar"
 
         # git clean -fdX
         # git status
