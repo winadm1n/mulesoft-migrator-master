@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'hellomule/**'
+      - 'get-user-details/**'
  
 jobs:
 #   download_jar:
@@ -71,7 +71,7 @@ jobs:
         sudo apt install maven -y
         # chmod +x migrator.jar
         touch recipes.txt
-        echo 'scan "hellomule"'>> recipes.txt
+        echo 'scan "get-user-details"'>> recipes.txt
         echo "apply 1" >> recipes.txt
         echo "apply 1" >> recipes.txt
        
@@ -82,7 +82,7 @@ jobs:
       run: |
         if [ ! -d "migrated-folder" ]; then
           mkdir migrated-folder
-          mv hellomule/* migrated-folder/  # Moves files from specific-folder to new-folder
+          mv get-user-details/* migrated-folder/  # Moves files from specific-folder to new-folder
           ls
           cd ./migrated-folder
           git add .
