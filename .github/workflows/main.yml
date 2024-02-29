@@ -3,6 +3,8 @@ name: Mule to Spring Boot Migration
 
 on:
   push:
+    branches:
+      - master
     paths:
       - 'hellomule/**'
  
