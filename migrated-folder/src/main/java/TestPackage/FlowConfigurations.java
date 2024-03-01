@@ -14,10 +14,5 @@ public class FlowConfigurations {
                 .get();
     }
 
-    @Bean
-    IntegrationFlow get_user_detailsFlow() {
-        return IntegrationFlows.from(Http.inboundGateway("/getUserDetails")).handle((p, h) -> p)
-                .handle((p, h) -> "User Name : Greg Spencer,User Address : 399 Thornall Street, 1st Floor, Edison, NJ, NJ 08837")
-                .get();
-    }
+
 }
