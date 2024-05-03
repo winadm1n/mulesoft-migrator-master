@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e7f89ea5-4f86-4dc7-9b02-777f0d3b1956" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="get-user-detailsFlow" doc:id="5de3ab88-2843-497e-b8c0-19c08e0b0dc1" >
+		<http:listener doc:name="Listener" doc:id="dc2709bd-006f-4d02-8be2-163273477554" config-ref="HTTP_Listener_config" path="/getUserDetails"/>
+		<set-payload value="User Name : Greg Spencer,User Address : 399 Thornall Street, 1st Floor, Edison, NJ, NJ 08837" doc:name="Set Payload" doc:id="6bf9afd1-6f88-404f-b133-d7dccbc286dc" />
+	</flow>
+</mule>
